@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi Event</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="form-card">
+      <header class="header">
+        <span class="tag">EVENT REGISTRATION</span>
+        <h1>Form Registrasi Event</h1>
+        <p>Silakan isi data diri untuk mendaftar kegiatan seminar teknologi.</p>
+      </header>
 
+      <form id="registrationForm" action="#" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="nama">Nama lengkap <span>*</span></label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap"
+                 minlength="3" maxlength="50" required>
+          <small>Minimal 3 dan maksimal 50 karakter.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telepon">Nomor telepon <span>*</span></label>
+          <input type="tel" id="telepon" name="telepon" placeholder="Contoh: 081234567890"
+                 pattern="[0-9]{10,13}" maxlength="13" required>
+          <small>Masukkan 10–13 digit angka tanpa spasi.</small>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Jenis peserta <span>*</span></legend>
+          <label class="choice"><input type="radio" name="jenis_peserta" value="Mahasiswa" required> Mahasiswa</label>
+          <label class="choice"><input type="radio" name="jenis_peserta" value="Umum"> Umum</label>
+          <label class="choice"><input type="radio" name="jenis_peserta" value="Pelajar"> Pelajar</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Topik yang diminati <span>*</span></legend>
+          <label class="choice"><input type="checkbox" name="minat[]" value="Web Development"> Web Development</label>
+          <label class="choice"><input type="checkbox" name="minat[]" value="UI/UX Design"> UI/UX Design</label>
+          <label class="choice"><input type="checkbox" name="minat[]" value="Artificial Intelligence"> Artificial Intelligence</label>
+          <label class="choice"><input type="checkbox" name="minat[]" value="Cyber Security"> Cyber Security</label>
+          <small>Pilih minimal satu topik.</small>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="prodi">Program studi / bidang <span>*</span></label>
+          <select id="prodi" name="prodi" required>
+            <option value="">-- Pilih bidang --</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Manajemen">Manajemen</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="alasan">Alasan mengikuti event <span>*</span></label>
+          <textarea id="alasan" name="alasan" rows="5"
+                    minlength="20" maxlength="300"
+                    placeholder="Tuliskan alasan mengikuti kegiatan (20–300 karakter)" required></textarea>
+          <small>Minimal 20 dan maksimal 300 karakter.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="bukti">Unggah kartu identitas (PDF) <span>*</span></label>
+          <input type="file" id="bukti" name="bukti" accept=".pdf,application/pdf" required>
+          <small>File yang dipilih harus berformat PDF.</small>
+        </div>
+
+        <label class="agreement">
+          <input type="checkbox" id="persetujuan" name="persetujuan" required>
+          Saya menyatakan bahwa data yang diisi sudah benar.
+        </label>
+
+        <button type="submit">Kirim Pendaftaran</button>
+        <p id="message" class="message" aria-live="polite"></p>
+      </form>
+      <p class="note">Tanda (*) wajib diisi. Form ini merupakan contoh front-end untuk latihan.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
